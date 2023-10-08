@@ -1,5 +1,5 @@
 import React from 'react'
-
+// FlexContent ligando = ({ se Existe, endpoint: { título, cabeçalho, texto, img, btn, url } }) contendo => {}
 const FlexContent = ({ ifExists, endpoint: { title, heading, text, img, btn, url } }) => {
   return (
    <>

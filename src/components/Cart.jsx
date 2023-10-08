@@ -1,40 +1,41 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectCartItems,
-  selectCartState,
-  selectTotalAmount,
-  selectTotalQTY,
-  setClearCartItems,
-  setCloseCart,
-  setGetTotals
-} from "../app/CartSlice.js";
+import { selectCartItems, selectCartState, selectTotalAmount, selectTotalQTY, setClearCartItems, setCloseCart, setGetTotals } from "../app/CartSlice.js";
 import CartCount from "./cart/CartCount";
 import CartEmpty from "./cart/CartEmpty";
 import CartItem from "./cart/CartItem";
-
+// Carrinho ligando = () contendo => {}
 const Cart = () => {
+  // despacho ligando = usar Despacho();
   const dispatch = useDispatch();
+  // se Estado do Carrinho for verdade, ligando = usar Seletor(Seletor de Estado do Carrinho);
   const ifCartState = useSelector(selectCartState);
+  // Itens do Carrinho ligando = usar Seletor(Seletor de Itens do Carrinho);
   const cartItems = useSelector(selectCartItems);
+  // Quantia total ligando = usar Seletor(Seletor de Quantia Total);
   const totalAmount = useSelector(selectTotalAmount);
+  // Quantidade total ligando = usar Seletor(Seletor de Quantidade Total);
   const totalQTY = useSelector(selectTotalQTY);
   
   // console.log(cartItems)
-
+  // usar Efeito(()) contendo => {}
   useEffect(() => {
+    // despachar(definir Pegando Totais())
     dispatch(setGetTotals())
+    // Envolver na Estrutura , [Itens do carrinho, despachar] 
   },[cartItems, dispatch])
-  
+  // ativar Carrinho Alternando ligando = () contendo => {}
   const onCartToggle = () => {
-    dispatch(
-      setCloseCart({
+    // despachar(definir Fechando Carrinho({})
+    dispatch(setCloseCart({
+        // Estado do carrinho: falso,
         cartState: false,
       })
     );
   };
-
+  // ativar Limpar Itens do Carrinho ligando = () contendo => {}
   const onClearCartItems = () => {
+    // despachar(definir Limpeza de Itens do Carrinho())
     dispatch(setClearCartItems())
   }
   

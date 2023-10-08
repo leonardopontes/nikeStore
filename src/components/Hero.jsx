@@ -1,7 +1,7 @@
 import React from 'react';
 import Clips from './utils/Clips';
 import SocialLink from './utils/SocialLink';
-
+// Hero ligando = ({ heroapi: { título, subtítulo, btntext, img, sociallinks, videos } }) contendo => {}
 const Hero = ({ heroapi: { title, subtitle, btntext, img, sociallinks, videos } }) => {
   // console.log(heroapi)
   return (

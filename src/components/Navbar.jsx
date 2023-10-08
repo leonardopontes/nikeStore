@@ -1,34 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTotalQTY, setOpenCart } from '../app/CartSlice.js';
-
 import { HeartIcon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/logo.png';
 
+// Navbar ligando = () contendo => {}
 const Navbar = () => {
+    // [Estado do navbar, definir Estado do Navbar] ligando = usar Estado(falso);
     const [navState, setNavState] = useState(false);
+    // despachar ligando = usar Despacho();
     const dispatch = useDispatch();
+    // total de Quantidade ligando = usar Seletor(seletor de Quantidade Total)
     const totalQTY = useSelector(selectTotalQTY);
-
+    // ativar Carrinho alternando ligando = () contendo => {}
     const onCartToggle = () => {
+        // despachar(definir Carrinho Aberto({}
         dispatch(setOpenCart({
+            // Estado do carrinho: true
             cartState: true
         }))
     }
-
+    // ativar Rolagem Navbar ligando = () contendo => {}
     const onNavScroll = () => {
+        // Se(rolagem na.janela for maior que 30) {}
         if(window.scrollY > 30) {
+            // definir Estado do Navbar(true);
             setNavState(true);
+        // Se não {}    
         } else {
+            // definir Estado do Navbar(falso);
             setNavState(false);
         }
     }
+    // usar Efeito(() contendo => {}
     useEffect(() => {
+        // adicionar Evento Ouvinte na.janela('rolagem', ativar Rolagem Navbar);
         window.addEventListener('scroll', onNavScroll);
-
+        // retornar () => {}
         return () => {
-            window.removeEventListener('scroll', onNavScroll);
+          // remover Evento Ouvinte na.janela('rolagem', ativar Rolagem Navbar);
+          window.removeEventListener('scroll', onNavScroll);
         }
+    // , []);     
     },[]);
 return (
    <>

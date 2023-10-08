@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
-
+// Footer ligando = ({ footerAPI: { títulos, links } }) contendo => {}
 const Footer = ({ footerAPI: { titles, links } }) => {
+  // [Ano, definir Ano] ligando = usar Estado();
   const [Year, setYear] = useState();
+  // usar Efeito(() contendo => {}
   useEffect(() => {
+      // pegar Ano ligando = () => definir Ano(nova Data().pegar Ano Completo());
       const getYear = () => setYear(new Date().getFullYear());
+      // pegar Ano();
       getYear();
+      //, []);
   }, []);
   return (
    <>

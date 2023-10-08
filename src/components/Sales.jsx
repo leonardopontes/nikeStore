@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './utils/Item'
 import Title from './utils/Title' 
-
+// Vendas ligando = ({ se Existe, endpoint: { título, itens } }) contendo => {}
 const Sales = ({ ifExists, endpoint: { title, items } }) => {
   // console.log(endpoint)
   return (

@@ -6,14 +6,22 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import Title from "./utils/Title";
 import { truncate } from "lodash";
 
+// Stories ligando = ({ story: { título, notícias } }) contendo => {}
 const Stories = ({ story: { title, news } }) => {
+    // Opções splide = {}
     const splideOptions = {
+        // por Página: 4,
         perPage: 4,
+        // por Movimento: 1,
         perMove: 1,
+        // tipo: 'loop',
         type: 'loop',
+        // retroceder: true,
         rewind: true,
+        // teclado: 'global',
         keyboard: 'global',
         gap: '1rem',
+        // paginação: falso,
         pagination: false,
         padding: '2rem',
         breakpoints: {
