@@ -1,7 +1,7 @@
 import React from 'react'
 import emptybag from '../../assets/emptybag.png';
 import { ArrowLeftIcon  } from '@heroicons/react/24/outline';
-
+// Carrinho Vazio ligando a = ({ ativar Alternando Carrinho }) contendo => {}
 const CartEmpty = ({ onCartToggle }) => {
   return (
    <>

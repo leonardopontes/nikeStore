@@ -2,18 +2,23 @@ import React from "react";
 import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useDispatch } from "react-redux";
 import { setDecreaseItemQTY, setIncreaseItemQTY, setRemoveItemFromCart } from "../../app/CartSlice.js";
-
+// Item de Carrinho ligando a = ({ item: { id, título, texto, img, cor, sombra, preço, Quantidade no carrinho } }) contendo => {}
 const CartItem = ({ item: { id, title, text, img, color, shadow, price, cartQuantity } }) => {
+  // despacho ligando a = usar Despacho();
   const dispatch = useDispatch();
-
+  // ativar Remoção de Item ligando a = () contendo => {}
   const onRemoveItem = () => {
+    // despacho(definir Removendo Item do Carrinho com({ id, título, texto, img, cor, sombra, preço, Quantidade no carrinho }))
     dispatch(setRemoveItemFromCart({ id, title, text, img, color, shadow, price, cartQuantity }))
   }
-
+  // ativar Aumentando Quantidade de Item ligando a = () contendo => {}
   const onIncreaseItemQTY = () => {
+    // despacho(definir Aumentando Quantidade de Item com({ id, título, texto, img, cor, sombra, preço, Quantidade no carrinho }))
     dispatch(setIncreaseItemQTY({ id, title, text, img, color, shadow, price, cartQuantity }))
   }
+  // ativar Diminuindo Quantidade de Item ligando a = () contendo => {}
   const onDecreaseItemQTY = () => {
+    // despacho(definir Diminuindo Quantidade de Item com({ id, título, texto, img, cor, sombra, preço, Quantidade no carrinho }))
     dispatch(setDecreaseItemQTY({ id, title, text, img, color, shadow, price, cartQuantity }))
   }
 

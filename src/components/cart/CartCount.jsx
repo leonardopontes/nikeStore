@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChevronDoubleLeftIcon, XMarkIcon } from '@heroicons/react/24/solid';
-
+// Contagem de Carrinho ligando a = ({ definir Alternando Carrinho, total de Quandidade, definir Limpando Itens do Carrinho}) contendo => {}
 const CartCount = ({ onCartToggle, totalQTY, onClearCartItems }) => {
   return (
    <>

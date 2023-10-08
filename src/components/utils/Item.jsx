@@ -3,30 +3,23 @@ import { useDispatch } from "react-redux";
 
 import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
 import { setAddItemToCart, setOpenCart } from "../../app/CartSlice";
-
-const Item = ({
-  ifExists,
-  id,
-  color,
-  shadow,
-  title,
-  text,
-  img,
-  btn,
-  rating,
-  price,
-}) => {
+// Item ligando a = ({ se Existe, id, cor, sombra, título, texto, img, btn, avaliação, preço }) contendo => {}
+const Item = ({ ifExists, id, color, shadow, title, text, img, btn, rating, price }) => {
   //   console.log(id)
+  // despacho ligando a = usar Despacho();
   const dispatch = useDispatch();
-
+  // ativar Add No Carrinho ligando a = () contendo => {}
   const onAddToCart = () => {
+    // item ligando a = { id, título, texto, img, cor, sombra, preço};
     const item = { id, title, text, img, color, shadow, price };
-
+    // despacho(definir Add Item No Carrinho(item));
     dispatch(setAddItemToCart(item));
   };
-
+  // ativar Carrinho Alternando ligando a = () contendo => {}
   const onCartToggle = () => {
+    // despacho(definir Carrinho Aberto({}))
     dispatch(setOpenCart({
+      // Estado do Carrinho: true
         cartState: true
     }))
 }
